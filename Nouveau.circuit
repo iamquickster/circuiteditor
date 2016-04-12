@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<circuiteditor:Circuit xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:circuiteditor="http://www.example.org/circuiteditor" name="C1" type="PortePersonalise" entree="//@circuitElements.0 //@circuitElements.1" sortie="//@circuitElements.2">
+  <tableVerite/>
+  <circuitElements xsi:type="circuiteditor:Entree" emplacementX="50" emplacementY="50" name="E1" type="Entree" sortie="/ //@circuitElements.3"/>
+  <circuitElements xsi:type="circuiteditor:Entree" emplacementX="50" emplacementY="100" name="E2" type="Entree" sortie="/ //@circuitElements.3"/>
+  <circuitElements xsi:type="circuiteditor:Sortie" emplacementX="150" emplacementY="75" name="S1" entree="/ //@circuitElements.3"/>
+  <circuitElements xsi:type="circuiteditor:PorteET" emplacementX="100" emplacementY="75" name="P&amp;1" entree="//@circuitElements.0 //@circuitElements.1" sortie="//@circuitElements.2"/>
+  <historique/>
+</circuiteditor:Circuit>

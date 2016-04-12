@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/circuiteditor_2/src" modelPluginID="circuiteditor_2"
+    modelName="Circuiteditor" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>circuiteditor.ecore</foreignModel>
+  <genPackages prefix="Circuiteditor" disposableProviderFactory="true" ecorePackage="circuiteditor.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="circuiteditor.ecore#//TypeAction">
+      <genEnumLiterals ecoreEnumLiteral="circuiteditor.ecore#//TypeAction/AJOUTER"/>
+      <genEnumLiterals ecoreEnumLiteral="circuiteditor.ecore#//TypeAction/SUPPRIMER"/>
+      <genEnumLiterals ecoreEnumLiteral="circuiteditor.ecore#//TypeAction/DEPLACER"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="circuiteditor.ecore#//TypePorteStandard">
+      <genEnumLiterals ecoreEnumLiteral="circuiteditor.ecore#//TypePorteStandard/AND"/>
+      <genEnumLiterals ecoreEnumLiteral="circuiteditor.ecore#//TypePorteStandard/OR"/>
+      <genEnumLiterals ecoreEnumLiteral="circuiteditor.ecore#//TypePorteStandard/NOT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="circuiteditor.ecore#//ElementType">
+      <genEnumLiterals ecoreEnumLiteral="circuiteditor.ecore#//ElementType/Sortie"/>
+      <genEnumLiterals ecoreEnumLiteral="circuiteditor.ecore#//ElementType/Entree"/>
+      <genEnumLiterals ecoreEnumLiteral="circuiteditor.ecore#//ElementType/PorteStandard"/>
+      <genEnumLiterals ecoreEnumLiteral="circuiteditor.ecore#//ElementType/PortePersonalise"/>
+      <genEnumLiterals ecoreEnumLiteral="circuiteditor.ecore#//ElementType/PorteET"/>
+      <genEnumLiterals ecoreEnumLiteral="circuiteditor.ecore#//ElementType/PorteOU"/>
+      <genEnumLiterals ecoreEnumLiteral="circuiteditor.ecore#//ElementType/PorteNOT"/>
+    </genEnums>
+    <genClasses ecoreClass="circuiteditor.ecore#//CircuitEditor">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference circuiteditor.ecore#//CircuitEditor/mainCircuit"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference circuiteditor.ecore#//CircuitEditor/persistanceManager"/>
+      <genOperations ecoreOperation="circuiteditor.ecore#//CircuitEditor/ajouter">
+        <genParameters ecoreParameter="circuiteditor.ecore#//CircuitEditor/ajouter/type"/>
+      </genOperations>
+      <genOperations ecoreOperation="circuiteditor.ecore#//CircuitEditor/enlever">
+        <genParameters ecoreParameter="circuiteditor.ecore#//CircuitEditor/enlever/nomElement"/>
+      </genOperations>
+      <genOperations ecoreOperation="circuiteditor.ecore#//CircuitEditor/nouveau"/>
+      <genOperations ecoreOperation="circuiteditor.ecore#//CircuitEditor/ouvrir">
+        <genParameters ecoreParameter="circuiteditor.ecore#//CircuitEditor/ouvrir/path"/>
+      </genOperations>
+      <genOperations ecoreOperation="circuiteditor.ecore#//CircuitEditor/delier">
+        <genParameters ecoreParameter="circuiteditor.ecore#//CircuitEditor/delier/elementSource"/>
+        <genParameters ecoreParameter="circuiteditor.ecore#//CircuitEditor/delier/elementCible"/>
+      </genOperations>
+      <genOperations ecoreOperation="circuiteditor.ecore#//CircuitEditor/deplacer">
+        <genParameters ecoreParameter="circuiteditor.ecore#//CircuitEditor/deplacer/element"/>
+        <genParameters ecoreParameter="circuiteditor.ecore#//CircuitEditor/deplacer/x"/>
+        <genParameters ecoreParameter="circuiteditor.ecore#//CircuitEditor/deplacer/y"/>
+      </genOperations>
+      <genOperations ecoreOperation="circuiteditor.ecore#//CircuitEditor/sauvegarder">
+        <genParameters ecoreParameter="circuiteditor.ecore#//CircuitEditor/sauvegarder/filePath"/>
+      </genOperations>
+      <genOperations ecoreOperation="circuiteditor.ecore#//CircuitEditor/exporterTable">
+        <genParameters ecoreParameter="circuiteditor.ecore#//CircuitEditor/exporterTable/path"/>
+      </genOperations>
+      <genOperations ecoreOperation="circuiteditor.ecore#//CircuitEditor/exporterCircuit">
+        <genParameters ecoreParameter="circuiteditor.ecore#//CircuitEditor/exporterCircuit/path"/>
+        <genParameters ecoreParameter="circuiteditor.ecore#//CircuitEditor/exporterCircuit/circuit"/>
+      </genOperations>
+      <genOperations ecoreOperation="circuiteditor.ecore#//CircuitEditor/undo"/>
+      <genOperations ecoreOperation="circuiteditor.ecore#//CircuitEditor/redo"/>
+      <genOperations ecoreOperation="circuiteditor.ecore#//CircuitEditor/relier">
+        <genParameters ecoreParameter="circuiteditor.ecore#//CircuitEditor/relier/elementSource"/>
+        <genParameters ecoreParameter="circuiteditor.ecore#//CircuitEditor/relier/elementCible"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="circuiteditor.ecore#//Circuit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute circuiteditor.ecore#//Circuit/fichier"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference circuiteditor.ecore#//Circuit/circuitElements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute circuiteditor.ecore#//Circuit/maxPorte"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference circuiteditor.ecore#//Circuit/tabledeverite"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference circuiteditor.ecore#//Circuit/historique"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute circuiteditor.ecore#//Circuit/maxEntree"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute circuiteditor.ecore#//Circuit/maxSortie"/>
+      <genOperations ecoreOperation="circuiteditor.ecore#//Circuit/ajouter">
+        <genParameters ecoreParameter="circuiteditor.ecore#//Circuit/ajouter/elementCircuit"/>
+      </genOperations>
+      <genOperations ecoreOperation="circuiteditor.ecore#//Circuit/relier">
+        <genParameters ecoreParameter="circuiteditor.ecore#//Circuit/relier/elementSource"/>
+        <genParameters ecoreParameter="circuiteditor.ecore#//Circuit/relier/elementCible"/>
+      </genOperations>
+      <genOperations ecoreOperation="circuiteditor.ecore#//Circuit/enlever">
+        <genParameters ecoreParameter="circuiteditor.ecore#//Circuit/enlever/elementCircuit"/>
+      </genOperations>
+      <genOperations ecoreOperation="circuiteditor.ecore#//Circuit/valider"/>
+      <genOperations ecoreOperation="circuiteditor.ecore#//Circuit/getElement">
+        <genParameters ecoreParameter="circuiteditor.ecore#//Circuit/getElement/nomElement"/>
+      </genOperations>
+      <genOperations ecoreOperation="circuiteditor.ecore#//Circuit/count">
+        <genParameters ecoreParameter="circuiteditor.ecore#//Circuit/count/type"/>
+      </genOperations>
+      <genOperations ecoreOperation="circuiteditor.ecore#//Circuit/getMax">
+        <genParameters ecoreParameter="circuiteditor.ecore#//Circuit/getMax/type"/>
+      </genOperations>
+      <genOperations ecoreOperation="circuiteditor.ecore#//Circuit/supprimerLiaison">
+        <genParameters ecoreParameter="circuiteditor.ecore#//Circuit/supprimerLiaison/e1"/>
+        <genParameters ecoreParameter="circuiteditor.ecore#//Circuit/supprimerLiaison/e2"/>
+      </genOperations>
+      <genOperations ecoreOperation="circuiteditor.ecore#//Circuit/deplacer">
+        <genParameters ecoreParameter="circuiteditor.ecore#//Circuit/deplacer/element"/>
+        <genParameters ecoreParameter="circuiteditor.ecore#//Circuit/deplacer/x"/>
+        <genParameters ecoreParameter="circuiteditor.ecore#//Circuit/deplacer/y"/>
+      </genOperations>
+      <genOperations ecoreOperation="circuiteditor.ecore#//Circuit/delier">
+        <genParameters ecoreParameter="circuiteditor.ecore#//Circuit/delier/elementSource"/>
+        <genParameters ecoreParameter="circuiteditor.ecore#//Circuit/delier/elementCible"/>
+      </genOperations>
+      <genOperations ecoreOperation="circuiteditor.ecore#//Circuit/calculerListeSortie">
+        <genParameters ecoreParameter="circuiteditor.ecore#//Circuit/calculerListeSortie/listePorte"/>
+        <genParameters ecoreParameter="circuiteditor.ecore#//Circuit/calculerListeSortie/listeResultat"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="circuiteditor.ecore#//ElementCircuit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute circuiteditor.ecore#//ElementCircuit/emplacementX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute circuiteditor.ecore#//ElementCircuit/emplacementY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute circuiteditor.ecore#//ElementCircuit/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute circuiteditor.ecore#//ElementCircuit/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute circuiteditor.ecore#//ElementCircuit/sourceMax"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute circuiteditor.ecore#//ElementCircuit/cibleMax"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute circuiteditor.ecore#//ElementCircuit/estCircuitValide"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute circuiteditor.ecore#//ElementCircuit/estModifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute circuiteditor.ecore#//ElementCircuit/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference circuiteditor.ecore#//ElementCircuit/entree"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference circuiteditor.ecore#//ElementCircuit/sortie"/>
+      <genOperations ecoreOperation="circuiteditor.ecore#//ElementCircuit/valider"/>
+      <genOperations ecoreOperation="circuiteditor.ecore#//ElementCircuit/getLiaisons"/>
+    </genClasses>
+    <genClasses ecoreClass="circuiteditor.ecore#//Porte"/>
+    <genClasses ecoreClass="circuiteditor.ecore#//PorteStandard">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute circuiteditor.ecore#//PorteStandard/typePorte"/>
+    </genClasses>
+    <genClasses ecoreClass="circuiteditor.ecore#//PortePersonalise">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference circuiteditor.ecore#//PortePersonalise/circuit"/>
+    </genClasses>
+    <genClasses ecoreClass="circuiteditor.ecore#//PorteET"/>
+    <genClasses ecoreClass="circuiteditor.ecore#//PorteOU"/>
+    <genClasses ecoreClass="circuiteditor.ecore#//Entree"/>
+    <genClasses ecoreClass="circuiteditor.ecore#//Sortie"/>
+    <genClasses ecoreClass="circuiteditor.ecore#//TableDeVerite">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference circuiteditor.ecore#//TableDeVerite/possede"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference circuiteditor.ecore#//TableDeVerite/element"/>
+      <genOperations ecoreOperation="circuiteditor.ecore#//TableDeVerite/calculerTable"/>
+    </genClasses>
+    <genClasses ecoreClass="circuiteditor.ecore#//LigneTableDeVerite">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute circuiteditor.ecore#//LigneTableDeVerite/entrees"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute circuiteditor.ecore#//LigneTableDeVerite/sortie"/>
+      <genOperations ecoreOperation="circuiteditor.ecore#//LigneTableDeVerite/setEntree">
+        <genParameters ecoreParameter="circuiteditor.ecore#//LigneTableDeVerite/setEntree/newEntree"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="circuiteditor.ecore#//ElementTableVerite">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference circuiteditor.ecore#//ElementTableVerite/tableVerite"/>
+      <genOperations ecoreOperation="circuiteditor.ecore#//ElementTableVerite/evaluer"/>
+      <genOperations ecoreOperation="circuiteditor.ecore#//ElementTableVerite/calculListeEntreeBoolean">
+        <genParameters ecoreParameter="circuiteditor.ecore#//ElementTableVerite/calculListeEntreeBoolean/longueurListe"/>
+        <genParameters ecoreParameter="circuiteditor.ecore#//ElementTableVerite/calculListeEntreeBoolean/valeur"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="circuiteditor.ecore#//GestionnaireHistorique">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute circuiteditor.ecore#//GestionnaireHistorique/actionCurseur"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference circuiteditor.ecore#//GestionnaireHistorique/circuit"/>
+      <genOperations ecoreOperation="circuiteditor.ecore#//GestionnaireHistorique/enregistrerAction">
+        <genParameters ecoreParameter="circuiteditor.ecore#//GestionnaireHistorique/enregistrerAction/action"/>
+        <genParameters ecoreParameter="circuiteditor.ecore#//GestionnaireHistorique/enregistrerAction/element"/>
+      </genOperations>
+      <genOperations ecoreOperation="circuiteditor.ecore#//GestionnaireHistorique/undo"/>
+      <genOperations ecoreOperation="circuiteditor.ecore#//GestionnaireHistorique/redo"/>
+    </genClasses>
+    <genClasses ecoreClass="circuiteditor.ecore#//Action">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute circuiteditor.ecore#//Action/type"/>
+      <genOperations ecoreOperation="circuiteditor.ecore#//Action/execute">
+        <genParameters ecoreParameter="circuiteditor.ecore#//Action/execute/circuit"/>
+        <genParameters ecoreParameter="circuiteditor.ecore#//Action/execute/element"/>
+      </genOperations>
+      <genOperations ecoreOperation="circuiteditor.ecore#//Action/rollback">
+        <genParameters ecoreParameter="circuiteditor.ecore#//Action/rollback/circuit"/>
+        <genParameters ecoreParameter="circuiteditor.ecore#//Action/rollback/element"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="circuiteditor.ecore#//ActionElementCircuit">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference circuiteditor.ecore#//ActionElementCircuit/liaisonsModifiees"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference circuiteditor.ecore#//ActionElementCircuit/elementModifie"/>
+    </genClasses>
+    <genClasses ecoreClass="circuiteditor.ecore#//ActionLiaison">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference circuiteditor.ecore#//ActionLiaison/cible"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference circuiteditor.ecore#//ActionLiaison/source"/>
+    </genClasses>
+    <genClasses ecoreClass="circuiteditor.ecore#//PersistanceManager">
+      <genOperations ecoreOperation="circuiteditor.ecore#//PersistanceManager/sauvegardeXMI">
+        <genParameters ecoreParameter="circuiteditor.ecore#//PersistanceManager/sauvegardeXMI/circuit"/>
+        <genParameters ecoreParameter="circuiteditor.ecore#//PersistanceManager/sauvegardeXMI/path"/>
+      </genOperations>
+      <genOperations ecoreOperation="circuiteditor.ecore#//PersistanceManager/sauvegardeJPG">
+        <genParameters ecoreParameter="circuiteditor.ecore#//PersistanceManager/sauvegardeJPG/circuit"/>
+        <genParameters ecoreParameter="circuiteditor.ecore#//PersistanceManager/sauvegardeJPG/path"/>
+      </genOperations>
+      <genOperations ecoreOperation="circuiteditor.ecore#//PersistanceManager/sauvegardeTable">
+        <genParameters ecoreParameter="circuiteditor.ecore#//PersistanceManager/sauvegardeTable/table"/>
+        <genParameters ecoreParameter="circuiteditor.ecore#//PersistanceManager/sauvegardeTable/path"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="circuiteditor.ecore#//PorteNOT"/>
+  </genPackages>
+</genmodel:GenModel>
